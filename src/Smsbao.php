@@ -2,6 +2,7 @@
 
 namespace Hicolin\Smsbao;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
@@ -44,17 +45,19 @@ class Smsbao
     /**
      * @param string $phone
      * @param string $content
-     * @throws \Exception
+     * @return string
+     * @throws Exception
      */
-    public function send(string $phone, string $content): ResponseInterface
+    public function send(string $phone, string $content): string
     {
         $content = urlencode($content);
         $this->apiUrl = $this->apiUrl . "&m={$phone}&c={$content}";
 
         try {
-            return (new Client())->get($this->apiUrl);
+            $response = (new Client())->get($this->apiUrl);
+            return (string)$response->getBody();
         } catch (GuzzleException $e) {
-            throw new \Exception($e->getMessage());
+            throw new Exception($e->getMessage());
         }
     }
 
