@@ -31,6 +31,7 @@ class Smsbao
 
     /**
      * Smsbao constructor.
+     *
      * @param string $account
      * @param string $password
      */
@@ -43,9 +44,12 @@ class Smsbao
     }
 
     /**
+     * Send message
+     *
      * @param string $phone
      * @param string $content
      * @return string
+     *
      * @throws Exception
      */
     public function send(string $phone, string $content): string
