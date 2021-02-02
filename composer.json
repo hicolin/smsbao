@@ -1,0 +1,22 @@
+{
+    "name": "hicolin/smsbao",
+    "description": "smsbao-sdk",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Colin",
+            "email": "811687790@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Hicolin\\Smsbao\\": "./src"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
