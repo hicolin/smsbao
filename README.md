@@ -5,7 +5,7 @@
 ### 安装
 
 ```cmd
-    composer require hicolin/smsbao
+    $ composer require hicolin/smsbao
 ```
 
 ### 使用
